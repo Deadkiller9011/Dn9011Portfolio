@@ -1,0 +1,555 @@
+/* Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #f1f1f1;
+    overflow-x: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  header .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  header .nav-links a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.4s;
+  }
+  
+  header .nav-links a:hover {
+    color: #ff0000;
+  }
+  
+  header .nav-links a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #ff0000;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+  }
+  
+  header .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  header .menu-icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    header .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    header .menu-icon {
+      display: block;
+      font-size: 30px;
+      color: #fff;
+    }
+  
+    header .nav-links.active {
+      display: flex;
+    }
+  }
+  
+  /* Skin Cards */
+  .skins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 150px 50px 50px 50px;
+  }
+  
+  .skin-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: transform 0.4s;
+  }
+  
+  .skin-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .skin-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .skin-card h3 {
+    margin: 10px 0;
+    color: #ff4757;
+  }
+  
+  /* Outro Section */
+  .outro {
+    margin-top: 100px;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #111, #222);
+    animation: fadeIn 2s;
+  }
+  
+  .outro h2 {
+    font-size: 36px;
+    background: linear-gradient(90deg, #1e90ff, #ff4757);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shine 3s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  .outro p {
+    font-size: 18px;
+    color: #aaa;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Social Buttons (Instagram, Twitter, YouTube) */
+  .social-buttons a {
+    margin: 10px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #bbb;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .social-buttons a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #ff0000;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+  }
+  
+  .social-buttons a:hover::after {
+    width: 100%;
+  }
+  
+  .social-buttons a:hover {
+    color: #ff0000;
+  }
+  
+  /* Footer */
+  footer {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    color: #bbb;
+    position: relative;
+  }
+  
+  footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  footer .footer-links a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: 0.4s;
+  }
+  
+  footer .footer-links a:hover {
+    color: #ff0000;
+  }
+  
+  footer .footer-links a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #ff0000;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+  }
+  
+  footer .footer-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes shine {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* Mobile Responsive Menu */
+  .menu-icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+      font-size: 30px;
+      color: #fff;
+    }
+  }
+
+  /* Skins Gallery Style */
+.skins-gallery {
+  padding: 50px;
+  background: linear-gradient(135deg, #121212, #1a1a1a);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 3rem;
+  color: #ff4b4b;
+  margin-bottom: 40px;
+}
+
+.skins-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.skin-card {
+  background: #1c1c1c;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #ff4b4b44;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skin-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.skin-card h2 {
+  padding: 15px;
+  font-size: 1.5rem;
+  color: #ffffff;
+  background: #282828;
+  margin: 0;
+}
+
+.skin-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff4b4b88;
+}
+
+.skin-card a {
+  text-decoration: none;
+}
+
+/* Animated Background for skins.html */
+body {
+  background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #262626, #0d0d0d);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: #fff;
+}
+
+/* Skins Gallery Styles */
+.skins-gallery {
+  padding: 50px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 3rem;
+  color: #ff4b4b;
+  margin-bottom: 40px;
+}
+
+/* Animation for Page Title */
+.animate-title {
+  animation: fadeDown 1.5s ease;
+}
+
+/* Cards Container */
+.skins-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Single Card */
+.skin-card {
+  background: #1c1c1c;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #ff4b4b44;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+/* Card Image */
+.skin-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Card Title */
+.skin-card h2 {
+  padding: 15px;
+  font-size: 1.5rem;
+  color: #ffffff;
+  background: #282828;
+  margin: 0;
+}
+
+/* Hover Effect */
+.skin-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff4b4b88;
+}
+
+/* Smooth Card Entry Animation */
+.animate-card {
+  animation: scaleFade 1s ease forwards;
+}
+
+/* Keyframes */
+@keyframes scaleFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  font-size: 1rem;
+  margin-top: 50px;
+}
+/* Page Heading Section */
+.page-heading {
+  padding-top: 120px; /* Big gap from header */
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  font-size: 3rem;
+  color: #ff4b4b;
+  animation: fadeDown 1.5s ease;
+}
+
+/* Operator Skin Card Layout */
+.operator-skin-card {
+  width: 220px;
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 75, 75, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.operator-skin-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border-bottom: 2px solid #ff4b4b44;
+}
+
+.operator-skin-card .operator-title {
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  background: #282828;
+  width: 100%;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+/* Hover Effects */
+.operator-skin-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff4b4b88;
+}
+
+.operator-skin-card:hover .operator-title {
+  background: #ff4b4b;
+  color: #000;
+}
+
+.about-creator {
+  font-size: 1.2rem;
+  color: #ddd;
+  background: rgba(255, 75, 75, 0.05);
+  border-left: 4px solid #ff4b4b;
+  padding: 20px;
+  margin: 40px auto;
+  width: 80%;
+  line-height: 1.6;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+/* Centered and pushed-down button container */
+.button-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  text-align: center;
+  min-height: 100vh;
+  gap: 20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-40%); /* Keeps it vertically centered from 40% */
+}
+
+/* Box-styled buttons with slightly smaller font */
+.box-button {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 18px 28px;
+  font-size: 1.05rem; /* Reduced font size */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Oswald', sans-serif;
+  text-decoration: none;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(255, 75, 75, 0.3);
+  transition: all 0.3s ease;
+  width: 220px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Hover effect remains */
+.box-button:hover {
+  background: #ff4b4b;
+  color: #000;
+  box-shadow: 0 0 25px #ff4b4b88;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
